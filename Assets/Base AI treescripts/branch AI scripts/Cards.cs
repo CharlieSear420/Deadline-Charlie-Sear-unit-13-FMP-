@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Cards : Cardsbase
 {
@@ -25,7 +26,11 @@ public class Cards : Cardsbase
         BurnCount();
         DrawCard();
         PlayerTimeLeech();
-        PlayerHellFire(); 
+        PlayerHellFire();
+
+        playerTimeText.text = (playerTimer).ToString();
+        enemyTimeText.text = (enemyTimer).ToString();
+
 
         if (Input.GetKeyDown(KeyCode.J))
         { 

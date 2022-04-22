@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 using BehaviourTree;
 
@@ -21,6 +22,10 @@ public class Cardsbase : MonoBehaviour
     public int boardSpace = 5;
 
     public int playingDeck = 64;
+
+    public Text playerTimeText;
+
+    public Text enemyTimeText;
 
     void Update()
     {

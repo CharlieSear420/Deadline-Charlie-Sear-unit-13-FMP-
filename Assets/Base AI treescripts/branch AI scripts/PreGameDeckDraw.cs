@@ -2,15 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PreGameDeckDraw : Cards
+public class PreGameDeckDraw : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject Angel;
+    public GameObject DefensiveMirror;
+    public GameObject DoubleEdgedSword;
+    public GameObject FrontlineDefense;
+    public GameObject GraveRobber;
+    public GameObject HailMary;
+    public GameObject HellFire;
+    public GameObject HourHandLance;
+    public GameObject LastLeg;
+    public GameObject MultiSecondJab;
+    public GameObject TimeLeech;
+    public GameObject TimerDiversion;
+
+
+    int[] playerDeckArray = new int[64];
+    //creates array
+
+
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
+    
     void Update()
     {
         
