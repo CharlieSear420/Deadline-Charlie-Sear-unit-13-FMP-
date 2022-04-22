@@ -13301,7 +13301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 528efa0ca28564a4f960ab335d3e0074, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardsInHand: 0
+  cardsInPlayersHand: 0
   drawTimer: 3
   burnerCards: 25
   burnerTimer: 3
@@ -13321,7 +13321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8ab4b3207855674bb627a99f6e92b0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardsInHand: 0
+  cardsInPlayersHand: 0
   drawTimer: 5
   burnerCards: 25
   burnerTimer: 3
@@ -13331,6 +13331,8 @@ MonoBehaviour:
   playingDeck: 64
   pLeechCounter: 0
   pLeechCounterTwo: 0
+  pHellCounter: 0
+  loopAmount: 0
 --- !u!1001 &1895570653
 PrefabInstance:
   m_ObjectHideFlags: 0

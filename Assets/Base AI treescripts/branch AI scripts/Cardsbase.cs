@@ -6,7 +6,7 @@ using BehaviourTree;
 
 public class Cardsbase : MonoBehaviour
 {
-    public int cardsInHand = 0;
+    public int cardsInPlayersHand = 0;
 
     public float drawTimer = 5f;
 
@@ -33,7 +33,7 @@ public class Cardsbase : MonoBehaviour
         {
             playerTimer -= Time.deltaTime;
         }
-        print("player count down");
+        
     }
 
     public void EnemyCountDown()
@@ -68,7 +68,7 @@ public class Cardsbase : MonoBehaviour
         if (drawTimer <= 0)
         {
             playingDeck -= 1;
-            cardsInHand += 1;
+            cardsInPlayersHand += 1;
             drawTimer = 5f;
         }
     }
