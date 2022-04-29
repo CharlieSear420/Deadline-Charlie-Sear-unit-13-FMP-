@@ -14613,6 +14613,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1762862954}
+  - component: {fileID: 1762862955}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -14634,6 +14635,36 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1762862955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1762862953}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d8ab4b3207855674bb627a99f6e92b0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cardsInPlayersHand: 0
+  drawTimer: 5
+  burnerCards: 25
+  burnerTimer: 3
+  playerTimer: 120
+  enemyTimer: 120
+  boardSpace: 5
+  playingDeck: 64
+  playerTimeText: {fileID: 209769718}
+  enemyTimeText: {fileID: 1412421518}
+  burnerCardsText: {fileID: 1436610969}
+  victoryText: {fileID: 1334777293}
+  failureText: {fileID: 1503422507}
+  pLeechCounter: 0
+  pLeechCounterTwo: 0
+  pHellCounter: 0
+  loopAmount: 0
+  runLoop: 1
 --- !u!1001 &1785013481
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15146,7 +15177,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 74838f3ae2af6174a9ded6e9d381c53a, type: 3}
   m_PrefabInstance: {fileID: 982571730}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1879023266
+--- !u!114 &1879023264
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -15155,27 +15186,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1879023263}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d8ab4b3207855674bb627a99f6e92b0c, type: 3}
+  m_Script: {fileID: 11500000, guid: 4d217441b31b3d34cb7ed05a84e3c125, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardsInPlayersHand: 0
-  drawTimer: 5
-  burnerCards: 25
-  burnerTimer: 3
-  playerTimer: 120
-  enemyTimer: 120
-  boardSpace: 5
-  playingDeck: 64
-  playerTimeText: {fileID: 209769718}
-  enemyTimeText: {fileID: 1412421518}
-  burnerCardsText: {fileID: 1436610969}
-  victoryText: {fileID: 1334777293}
-  failureText: {fileID: 1503422507}
-  pLeechCounter: 0
-  pLeechCounterTwo: 0
-  pHellCounter: 0
-  loopAmount: 0
-  runLoop: 1
 --- !u!1001 &1895570653
 PrefabInstance:
   m_ObjectHideFlags: 0
