@@ -28,8 +28,10 @@ public class Cards : Cardsbase
         PlayerTimeLeech();
         PlayerHellFire();
 
+
         playerTimeText.text = (playerTimer).ToString();
         enemyTimeText.text = (enemyTimer).ToString();
+        burnerCardsText.text = (burnerCards).ToString();
 
 
         if (Input.GetKeyDown(KeyCode.J))
@@ -65,31 +67,7 @@ public class Cards : Cardsbase
         }
 
 
-        return;
-
-
-        if (pLeechCounter > 0)
-        {
-            
-            
-            
-
-            if (enemyTimer > 0)
-            {
-                enemyTimer -= Time.deltaTime * 2;
-            }
-
-            if (pLeechCounterTwo > 0)
-            {
-                pLeechCounterTwo -= Time.deltaTime;
-                
-            }
-            else
-            {
-                pLeechCounterTwo = 2f;
-            }
-
-        }
+        
     }
 
     public void GraveRobber()

@@ -27,6 +27,12 @@ public class Cardsbase : MonoBehaviour
 
     public Text enemyTimeText;
 
+    public Text burnerCardsText;
+
+    public GameObject victoryText;
+
+    public GameObject failureText;
+
     void Update()
     {
 
@@ -38,7 +44,13 @@ public class Cardsbase : MonoBehaviour
         {
             playerTimer -= Time.deltaTime;
         }
-        
+
+        if (enemyTimer <= 0)
+        {
+            Time.timeScale = 0f;
+            victoryText.SetActive(true);
+            print("VICTORY");
+        }
     }
 
     public void EnemyCountDown()
@@ -47,7 +59,18 @@ public class Cardsbase : MonoBehaviour
         {
             enemyTimer -= Time.deltaTime;
         }
+
+        if (playerTimer <= 0)
+        {
+            Time.timeScale = 0f;
+            failureText.SetActive(true);
+            print("YOU LOOSE");
+        }
     }
+
+
+
+
 
     public void BurnCount()
     {
