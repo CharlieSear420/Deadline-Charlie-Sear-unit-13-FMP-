@@ -27,6 +27,7 @@ public class PreGameDeckDraw : MonoBehaviour
     public Transform playerDeckSpawnLocation;
     public Transform enemyDeckSpawnLocation;
 
+    public int i;
 
     
 
@@ -34,9 +35,9 @@ public class PreGameDeckDraw : MonoBehaviour
     void Start()
     {
         GeneratePlayerDeck();
-        Instantiate(playerDeckArray[UnityEngine.Random.Range(0, 11)], playerDeckSpawnLocation.position, playerDeckSpawnLocation.rotation);
         GenerateEnemyDeck();
-        Instantiate(enemyDeckArray[UnityEngine.Random.Range(0, 11)], enemyDeckSpawnLocation.position, enemyDeckSpawnLocation.rotation);
+
+        InstantiateDecks();
     }
 
     
@@ -185,6 +186,19 @@ public class PreGameDeckDraw : MonoBehaviour
                     break;
 
             }
+        }
+
+
+    }
+
+    void InstantiateDecks()
+    {
+        
+        for (int i = 0; i < 64; i++)
+        {
+            Instantiate(playerDeckArray[UnityEngine.Random.Range(0, 11)], playerDeckSpawnLocation.position, playerDeckSpawnLocation.rotation);
+
+            Instantiate(enemyDeckArray[UnityEngine.Random.Range(0, 11)], enemyDeckSpawnLocation.position, enemyDeckSpawnLocation.rotation);
         }
 
 
