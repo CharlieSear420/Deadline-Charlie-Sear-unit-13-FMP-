@@ -7,36 +7,45 @@ using UnityEngine.UI;
 
 public class Cardsbase : MonoBehaviour
 {
+
+    
     public int cardsInPlayersHand = 0;
-
     public float drawTimer = 5f;
-
     public int burnerCards = 25;
-
     public float burnerTimer = 3f;
-
     public float playerTimer = 120f;
-
     public float enemyTimer = 120f;
-
     public int boardSpace = 5;
-
-    public int playingDeck = 64;
-
+    //public int playingDeck = 64;
     public Text playerTimeText;
-
     public Text enemyTimeText;
-
     public Text burnerCardsText;
-
+    public Text deckSizetext;
     public GameObject victoryText;
-
     public GameObject failureText;
 
     void Update()
     {
-
+        
     }
+
+
+    public void DrawCard()
+    {
+        if (drawTimer > 0)
+        {
+            drawTimer -= Time.deltaTime;
+        }
+
+        if (drawTimer <= 0)
+        {
+
+            drawTimer = 5f;
+        }
+    }
+
+
+
 
     public void PlayerCountDown()
     {
@@ -68,10 +77,6 @@ public class Cardsbase : MonoBehaviour
         }
     }
 
-
-
-
-
     public void BurnCount()
     {
         if (burnerTimer > 0)
@@ -86,20 +91,6 @@ public class Cardsbase : MonoBehaviour
         }
     }
 
-    public void DrawCard()
-    {
-        if (drawTimer > 0)
-        {
-            drawTimer -= Time.deltaTime;
-        }
-
-        if (drawTimer <= 0)
-        {
-            playingDeck -= 1;
-            cardsInPlayersHand += 1;
-            drawTimer = 5f;
-        }
-    }
 
 
 

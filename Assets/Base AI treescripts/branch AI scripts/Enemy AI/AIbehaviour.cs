@@ -15,8 +15,13 @@ public class AIbehaviour : MonoBehaviour
     * 
     */
 
-
-
+    public bool checkTimerBool;
+    public bool checkOffensiveCardBool;
+    public bool checkBurnerCardBool;
+    public bool checkSpecialCardBool;
+    public bool checkSpecialCostBool;
+    public bool checkDefensiveBool;
+    public bool checkBoardSpaceBool;
 
     void Start()
     {
@@ -26,24 +31,24 @@ public class AIbehaviour : MonoBehaviour
     
     void Update()
     {
-        
+        ThoughtProcess();
     }
 
     //-----------------------------decision making-----------------------------------
 
     public void ThoughtProcess()
     {
-        if (CheckTimer() == true)
+        if (checkTimerBool == true)
         {
-            if (CheckOffensiveCard() == true)
+            if (checkOffensiveCardBool == true)
             {
-                if (CheckBurnerCard() == true)
+                if (checkBurnerCardBool == true)
                 {
                     PlayOffensive();
                 }
                 else
                 {
-                    if (CheckSpecialCard() == true)
+                    if (checkSpecialCardBool == true)
                     {
                         PlaySpecialCrad();
                     }
@@ -51,9 +56,9 @@ public class AIbehaviour : MonoBehaviour
             }
             else
             {
-                if (CheckSpecialCard() == true)
+                if (checkSpecialCardBool == true)
                 {
-                    if (CheckSpecialCost() == true)
+                    if (checkSpecialCostBool == true)
                     {
                         PlaySpecialCrad();
                     }
@@ -61,9 +66,9 @@ public class AIbehaviour : MonoBehaviour
             }
             
             
-            if (CheckDefensiveCard() == true)
+            if (checkDefensiveBool == true)
             {
-                if (CheckBoardSpace() == true)
+                if (checkBoardSpaceBool == true)
                 {
                     PlayDefensiveCard();
                 }
@@ -72,9 +77,9 @@ public class AIbehaviour : MonoBehaviour
         }
         else
         {
-            if (CheckDefensiveCard() == true)
+            if (checkDefensiveBool == true)
             {
-                if (CheckBoardSpace() == true)
+                if (checkBoardSpaceBool == true)
                 {
                     PlayDefensiveCard();
                 }
@@ -86,11 +91,14 @@ public class AIbehaviour : MonoBehaviour
 
     public void CheckTimer()
     {
-
+        if (GameObject.FindWithTag("GameObject").GetComponent<Cards>().enemyTimer >= GameObject.FindWithTag("GameObject").GetComponent<Cards>().playerTimer)
+        {
+            checkTimerBool = true;
+        }
     }
     public void CheckOffensiveCard()
     {
-
+        
     }
     public void CheckBurnerCard()
     {

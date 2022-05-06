@@ -18,11 +18,14 @@ public class PreGameDeckDraw : MonoBehaviour
     public GameObject timerDiversion;
 
 
+    // Player's deck
     GameObject[] playerDeckArray = new GameObject[64];
+    List<GameObject> playerDeck;
+
     //creates array
     GameObject[] enemyDeckArray = new GameObject[64];
 
-    
+    List<GameObject> playerHand;
 
     public Transform playerDeckSpawnLocation;
     public Transform enemyDeckSpawnLocation;
@@ -34,13 +37,54 @@ public class PreGameDeckDraw : MonoBehaviour
 
     void Start()
     {
-        GeneratePlayerDeck();
-        GenerateEnemyDeck();
 
-        InstantiateDecks();
+        //GeneratePlayerDeck();
+        //GenerateEnemyDeck();
+
+        //InstantiateDecks();
+
+        Setup();
+        GeneratePlayerDeck();
+
+
+        GameObject card = GetFirstPlayerCard();
+        StorePlayerCard( card );
+
     }
 
-    
+    void Setup()
+    {
+        playerHand = new List<GameObject>();
+        playerDeck = new List<GameObject>();
+    }
+
+    void GeneratePlayerDeck()
+    {
+        GameObject newObject;
+        for( int i=0; i<64; i++ )
+        {
+            newObject = Instantiate( angel, playerDeckSpawnLocation.position, Quaternion.identity );
+            //turn angel to random card
+            playerDeck.Add(newObject);
+        }
+    }
+
+    // draw first card from deck 
+    GameObject GetFirstPlayerCard()
+    {
+        GameObject firstCard = playerDeck[0];
+        playerDeck.RemoveAt(0);
+        return firstCard;
+    }
+
+    // store card in playerHand list
+    void StorePlayerCard( GameObject card )
+    {
+        playerHand.Add( card );
+
+    }
+
+    /*
 
 
     void GeneratePlayerDeck()
@@ -197,12 +241,15 @@ public class PreGameDeckDraw : MonoBehaviour
         for (int i = 0; i < 64; i++)
         {
             Instantiate(playerDeckArray[UnityEngine.Random.Range(0, 11)], playerDeckSpawnLocation.position, playerDeckSpawnLocation.rotation);
+            playerHand.Add(i);
 
             Instantiate(enemyDeckArray[UnityEngine.Random.Range(0, 11)], enemyDeckSpawnLocation.position, enemyDeckSpawnLocation.rotation);
+
+
         }
 
 
     }
 
-
+    */
 }

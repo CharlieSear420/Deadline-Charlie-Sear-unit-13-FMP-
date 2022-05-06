@@ -33,7 +33,7 @@ public class Cards : Cardsbase
         enemyTimeText.text = (enemyTimer).ToString();
         burnerCardsText.text = (burnerCards).ToString();
 
-
+        
         if (Input.GetKeyDown(KeyCode.J))
         { 
                 StartCoroutine(MultiSecondJab());
