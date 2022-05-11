@@ -91,9 +91,9 @@ public class AIbehaviour : MonoBehaviour
 
     public void CheckTimer()
     {
-        if (GameObject.FindWithTag("GameObject").GetComponent<Cards>().enemyTimer >= GameObject.FindWithTag("GameObject").GetComponent<Cards>().playerTimer)
+        //if (GameObject.FindWithTag("GameObject").GetComponent<Cards>().enemyTimer >= GameObject.FindWithTag("GameObject").GetComponent<Cards>().playerTimer)
         {
-            checkTimerBool = true;
+           // checkTimerBool = true;
         }
     }
     public void CheckOffensiveCard()

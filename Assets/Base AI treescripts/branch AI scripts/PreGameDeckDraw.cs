@@ -4,38 +4,12 @@ using UnityEngine;
 
 public class PreGameDeckDraw : MonoBehaviour
 {
-    public GameObject angel;
-    public GameObject defensiveMirror;
-    public GameObject doubleEdgedSword;
-    public GameObject frontlineDefense;
-    public GameObject graveRobber;
-    public GameObject hailMary;
-    public GameObject hellFire;
-    public GameObject hourHandLance;
-    public GameObject lastLeg;
-    public GameObject multiSecondJab;
-    public GameObject timeLeech;
-    public GameObject timerDiversion;
-
-
-    // Player's deck
-    GameObject[] playerDeckArray = new GameObject[64];
-    List<GameObject> playerDeck;
-
-    //creates array
-    GameObject[] enemyDeckArray = new GameObject[64];
-
-    List<GameObject> playerHand;
-
-    public Transform playerDeckSpawnLocation;
-    public Transform enemyDeckSpawnLocation;
-
-    public int i;
+    
 
     
 
 
-    void Start()
+    public void Start()
     {
 
         //GeneratePlayerDeck();
@@ -43,46 +17,25 @@ public class PreGameDeckDraw : MonoBehaviour
 
         //InstantiateDecks();
 
-        Setup();
-        GeneratePlayerDeck();
+        //Setup();
+        //GeneratePlayerDeck();
 
 
-        GameObject card = GetFirstPlayerCard();
-        StorePlayerCard( card );
+        //GameObject card = GetFirstPlayerCard();
+        //StorePlayerCard( card );
 
+//        GameManager.gm.Test();
+
+    }
+
+    void Update()
+    {
     }
 
     void Setup()
     {
-        playerHand = new List<GameObject>();
-        playerDeck = new List<GameObject>();
     }
 
-    void GeneratePlayerDeck()
-    {
-        GameObject newObject;
-        for( int i=0; i<64; i++ )
-        {
-            newObject = Instantiate( angel, playerDeckSpawnLocation.position, Quaternion.identity );
-            //turn angel to random card
-            playerDeck.Add(newObject);
-        }
-    }
-
-    // draw first card from deck 
-    GameObject GetFirstPlayerCard()
-    {
-        GameObject firstCard = playerDeck[0];
-        playerDeck.RemoveAt(0);
-        return firstCard;
-    }
-
-    // store card in playerHand list
-    void StorePlayerCard( GameObject card )
-    {
-        playerHand.Add( card );
-
-    }
 
     /*
 
