@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
 
+//-------------------------------<<<Base ints/floats>>>-------------------------------
     
     public int cardsInPlayersHand = 3; //temp
     public float drawTimer = 5f;
@@ -17,17 +18,26 @@ public class GameManager : MonoBehaviour
     public float enemyTimer = 120f;
     public int boardSpace = 5;
   
+//-------------------------------<<<UI Text>>>-------------------------------
+
     public Text playerTimeText;
     public Text enemyTimeText;
     public Text burnerCardsText;
     public Text deckSizeText;
     public Text divertTimeText;
 
+//-------------------------------<<<UI Game Objects>>>-------------------------------
+
     public GameObject victoryText;
     public GameObject failureText;
     public GameObject cardsButtons;
+    
+//-------------------------------<<<Code stuff>>>-------------------------------
+
     public PreGameDeckDraw pg;
     public static GameManager gm;
+
+//-------------------------------<<<Card Floats (For timers)>>>-------------------------------
 
     public float pLeechCounter = 0f;
     public float pLeechCounterTwo = 0f;
@@ -37,25 +47,30 @@ public class GameManager : MonoBehaviour
 
     public float loopAmount = 0f;
 
+//-------------------------------<<<Bools>>>-------------------------------
+
     public bool runLoop = true;
     public bool tDivert = false;
 
 
+//-------------------------------<<<Card Strings>>>-------------------------------
 
 
-    public GameObject angel;
-    public GameObject defensiveMirror;
-    public GameObject doubleEdgedSword;
-    public GameObject frontlineDefense;
-    public GameObject graveRobber;
-    public GameObject hailMary;
-    public GameObject hellFire;
-    public GameObject hourHandLance;
-    public GameObject lastLeg;
-    public GameObject multiSecondJab;
-    public GameObject timeLeech;
-    public GameObject timerDiversion;
+    public string angel = "Angel";
+    public string defensiveMirror = "Defensive Mirror";
+    public string doubleEdgedSword = "Double Edged Sword";
+    public string frontlineDefense = "Front Line Defense";
+    public string graveRobber = "Grave Robber";
+    public string hailMary = "Hail Mary";
+    public string hellFire = "Hell Fire";
+    public string hourHandLance = "Hour Hand Lance";
+    public string lastLeg = "Last Leg";
+    public string multiSecondJab = "Multi-Second Jab";
+    public string timeLeech = "Time Leech";
+    public string timerDiversion = "Timer Diversion";
 
+
+//-------------------------------<<<Deck stuff>>>-------------------------------
 
     // Player's deck
     string[] playerDeckArray = new string[64];
@@ -70,12 +85,13 @@ public class GameManager : MonoBehaviour
     public Transform enemyDeckSpawnLocation;
 
     public int i;
+    public int f;
 
-
+//-------------------------------<<<Start>>>-------------------------------
 
     void Start()
     {
-        //pg = gameObject.AddComponent<PreGameDeckDraw>();
+        
 
         gm = this;
 
@@ -84,7 +100,7 @@ public class GameManager : MonoBehaviour
         //pg.i= 100;
         //pg.Start();
 
-        print("game manager start");
+       
 
         playerHand = new List<string>();
         playerDeck = new List<string>();
@@ -93,6 +109,7 @@ public class GameManager : MonoBehaviour
 
     }
 
+//-------------------------------<<<Update>>>-------------------------------
 
     void Update()
     {
@@ -104,6 +121,7 @@ public class GameManager : MonoBehaviour
         PlayerHellFire();
         TimerDiversion();
 
+//-------------------------------<<<Float to UI text>>>-------------------------------
 
         if( playerTimeText != null )
         {
@@ -125,26 +143,11 @@ public class GameManager : MonoBehaviour
             divertTimeText.text = tDiversion.ToString();
         } 
 
-        /*
-        if (Input.GetKeyDown(KeyCode.J))
-        { 
-            StartCoroutine(MultiSecondJab());
-        }
 
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            pHellCounter = 10f;
-        }
-        
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-            pLeechCounter = 30f;
-            pLeechCounterTwo = 2f;
-        }        
-        */
         
     }
 
+//-------------------------------<<<Base stuff>>>-------------------------------
 
     public void DrawCard()
     {
@@ -162,8 +165,6 @@ public class GameManager : MonoBehaviour
 
         }
     }
-
-
 
 
     public void PlayerCountDown()
@@ -212,6 +213,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+//-------------------------------<<<Card stuff>>>-------------------------------
 
     public void PlayerLeechTimer()
     {
@@ -351,14 +353,67 @@ public class GameManager : MonoBehaviour
         StartCoroutine(MultiSecondJab());
     }
 
+//-------------------------------<<<More Deck stuff>>>-------------------------------
+
+
     void GeneratePlayerDeck()
     {
         string newString;
         for( int i=0; i<64; i++ )
         {
             //newObject = Instantiate( angel, playerDeckSpawnLocation.position, Quaternion.identity );
-            //turn angel to random card
-            //playerDeck.Add(newString); //      <<<<<<<<<<<<<<<   issue here
+            f = Random.Range(1, 12);
+            if (f == 1)
+            {
+                newString = angel;
+            }
+            if (f == 2)
+            {
+                newString = defensiveMirror;
+            }
+            if (f == 3)
+            {
+                newString = doubleEdgedSword;
+            }
+            if (f == 4)
+            {
+                newString = frontlineDefense;
+            }
+            if (f == 5)
+            {
+                newString = graveRobber;
+            }
+            if (f == 6)
+            {
+                newString = hailMary;
+            }
+            if (f == 7)
+            {
+                newString = hellFire;
+            }
+            if (f == 8)
+            {
+                newString = hourHandLance;
+            }
+            if (f == 9)
+            {
+                newString = lastLeg;
+            }
+            if (f == 10)
+            {
+                newString = multiSecondJab;
+            }
+            if (f == 11)
+            {
+                newString = timeLeech;
+            }
+            if (f == 12)
+            {
+                newString = timerDiversion;
+            }
+
+
+            playerDeck.Add(newString);
         }
     }
 
