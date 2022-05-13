@@ -9,18 +9,20 @@ public class GameManager : MonoBehaviour
 {
 
     
-    public int cardsInPlayersHand = 3;
+    public int cardsInPlayersHand = 3; //temp
     public float drawTimer = 5f;
     public int burnerCards = 25;
     public float burnerTimer = 3f;
     public float playerTimer = 120f;
     public float enemyTimer = 120f;
     public int boardSpace = 5;
-    //public int playingDeck = 64;
+  
     public Text playerTimeText;
     public Text enemyTimeText;
     public Text burnerCardsText;
     public Text deckSizeText;
+    public Text divertTimeText;
+
     public GameObject victoryText;
     public GameObject failureText;
     public GameObject cardsButtons;
@@ -31,10 +33,12 @@ public class GameManager : MonoBehaviour
     public float pLeechCounterTwo = 0f;
     public float pHellCounter = 0f;
     //public float pJabCounter = 0f;
+    public float tDiversion = 20f;
 
     public float loopAmount = 0f;
 
     public bool runLoop = true;
+    public bool tDivert = false;
 
 
 
@@ -98,10 +102,8 @@ public class GameManager : MonoBehaviour
         DrawCard();
         PlayerTimeLeech();
         PlayerHellFire();
-        //DoubleEdgedSword();
+        TimerDiversion();
 
-
-   
 
         if( playerTimeText != null )
         {
@@ -118,7 +120,12 @@ public class GameManager : MonoBehaviour
             burnerCardsText.text = burnerCards.ToString();
         }
 
-        
+        if( divertTimeText != null )
+        {
+            divertTimeText.text = tDiversion.ToString();
+        } 
+
+        /*
         if (Input.GetKeyDown(KeyCode.J))
         { 
             StartCoroutine(MultiSecondJab());
@@ -134,7 +141,7 @@ public class GameManager : MonoBehaviour
             pLeechCounter = 30f;
             pLeechCounterTwo = 2f;
         }        
-        
+        */
         
     }
 
@@ -228,10 +235,7 @@ public class GameManager : MonoBehaviour
         
     }
 
-    public void GraveRobber()
-    {
 
-    }
 
     public void PlayerHellFireTimer()
     {
@@ -262,14 +266,37 @@ public class GameManager : MonoBehaviour
 
     }
 
-    public void LastLeg()
+    public void GraveRobber()
     {
 
     }
 
+    public void LastLeg()
+    {
+        // front line defense count +2, burner cards *2, board space +2 > -2
+    }
+
     public void TimerDiversion()
     {
+        
 
+        if (tDivert == true)
+        {
+            tDiversion -= Time.deltaTime;
+            playerTimer += Time.deltaTime;
+            
+            if (tDiversion <= 0)
+            {
+                tDiversion = 20f;
+                tDivert = false;
+            }
+        }
+ 
+    }
+
+    public void TimerDiversionActivate()
+    {
+        tDivert = true;
     }
 
     public void FrontlineDefense()
@@ -277,15 +304,15 @@ public class GameManager : MonoBehaviour
          
     }
 
+    public void PlayerHailMary()
+    {
+        
+    }
+
     public void PlayerHourHandLance()
     {
         enemyTimer -= 5f;
         print ("Hour Hand Lance waas played");
-    }
-
-    public void PlayerHailMary()
-    {
-        
     }
 
     public void DoubleEdgedSword()
@@ -331,7 +358,7 @@ public class GameManager : MonoBehaviour
         {
             //newObject = Instantiate( angel, playerDeckSpawnLocation.position, Quaternion.identity );
             //turn angel to random card
-            playerDeck.Add(newString);
+            //playerDeck.Add(newString); //      <<<<<<<<<<<<<<<   issue here
         }
     }
 
@@ -350,11 +377,6 @@ public class GameManager : MonoBehaviour
         playerHand.Add( card );
 
     }
-
-
-
-
-
 
 
 
