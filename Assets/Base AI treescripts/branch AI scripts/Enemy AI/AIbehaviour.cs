@@ -15,6 +15,10 @@ public class AIbehaviour : MonoBehaviour
     * 
     */
 
+//-------------------------------<<<Bools>>>-------------------------------
+
+    public bool eRunLoop = true;
+    public bool etDivert = false;
     public bool checkTimerBool;
     public bool checkOffensiveCardBool;
     public bool checkBurnerCardBool;
@@ -23,7 +27,15 @@ public class AIbehaviour : MonoBehaviour
     public bool checkDefensiveBool;
     public bool checkBoardSpaceBool;
 
+//-------------------------------<<<Card Floats (For timers)>>>-------------------------------
 
+    public float eLeechCounter = 0f;
+    public float eLeechCounterTwo = 0f;
+    public float eHellCounter = 0f;
+    //public float eJabCounter = 0f;
+    public float etDiversion = 20f;
+
+    public float eloopAmount = 0f;
     
 
     void Start()
@@ -36,6 +48,128 @@ public class AIbehaviour : MonoBehaviour
     {
         ThoughtProcess();
         CheckTimer();
+    }
+
+    public void RandomCardPlay()
+    {
+
+    }
+
+    //-------------------------------<<<Card stuff>>>-------------------------------
+
+     public void EnemyLeechTimer()
+    {
+        eLeechCounter = 30f;
+    }
+    
+    public void EnemyTimeLeech()
+    {
+        
+
+        if( eLeechCounter > 0 )
+        {
+            GameObject.FindWithTag("Game Manager").GetComponent<GameManager>().enemyTimer += Time.deltaTime / 50f;
+            GameObject.FindWithTag("Game Manager").GetComponent<GameManager>().playerTimer -= Time.deltaTime * 2;
+
+            eLeechCounter -= Time.deltaTime;
+            print ("Enemy Time Leech was played");
+        }
+
+
+        
+    }
+
+
+
+    public void EnemyHellFireTimer()
+    {
+        eHellCounter = 10f;
+    }
+
+    public void EnemyHellFire()
+    {
+        
+        if (eHellCounter > 0)
+        {
+            eHellCounter -= Time.deltaTime;
+            GameObject.FindWithTag("Game Manager").GetComponent<GameManager>().enemyBurnerTimer -= Time.deltaTime * 5;
+            //burnerTimer -= Time.deltaTime * 5;
+        }
+
+       //print ("Hell Fire was played");
+
+    }
+
+   
+
+    public void LastLeg()
+    {
+        // front line defense count +2, burner cards *2, board space +2 > -2
+    }
+
+    public void EnemyTimerDiversion()
+    {
+        
+
+        if (etDivert == true)
+        {
+            etDiversion -= Time.deltaTime;
+            GameObject.FindWithTag("Game Manager").GetComponent<GameManager>().enemyTimer += Time.deltaTime;
+            
+            if (etDiversion <= 0)
+            {
+                etDiversion = 20f;
+                etDivert = false;
+            }
+        }
+ 
+    }
+
+    public void TimerDiversionActivate()
+    {
+        tDivert = true;
+    }
+
+    public void PlayerHourHandLance()
+    {
+        enemyTimer -= 5f;
+        print ("Hour Hand Lance waas played");
+    }
+
+    public void DoubleEdgedSword()
+    {
+        enemyTimer -= 7.5f;
+        //wait
+        
+        playerTimer -= cardsInPlayersHand;
+    }
+
+    public IEnumerator MultiSecondJab()
+    {
+        while (runLoop)
+        {
+            if (loopAmount == 10)
+            {
+                runLoop = false;
+                break;
+            }
+            else
+            {
+                enemyTimer -= 1.5f;
+            }
+
+            loopAmount++;
+
+            yield return new WaitForSeconds(1);
+        }
+
+        print ("Multisecond Jab was played");
+
+    }
+
+    public void JabMulti()
+    {
+        StartCoroutine(MultiSecondJab());
     }
 
     //-----------------------------decision making-----------------------------------

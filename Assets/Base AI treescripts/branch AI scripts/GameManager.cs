@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     public float drawTimer = 5f;
     public int burnerCards = 25;
     public float burnerTimer = 3f;
+    public float enemyBurnerTimer = 3f;
     public float playerTimer = 120f;
     public float enemyTimer = 120f;
     public int boardSpace = 5;
