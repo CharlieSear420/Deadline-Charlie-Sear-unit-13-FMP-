@@ -358,7 +358,7 @@ public class GameManager : MonoBehaviour
 
     void GeneratePlayerDeck()
     {
-        string newString;
+        string newString = "empty";
         for( int i=0; i<64; i++ )
         {
             //newObject = Instantiate( angel, playerDeckSpawnLocation.position, Quaternion.identity );
