@@ -53,7 +53,7 @@ public class AIbehaviour : MonoBehaviour
         ThoughtProcess();
         CheckTimer();
         
-        RandomCardPlayActivator();
+        StartCoroutine(RandomCardPlay());
         
         EnemyTimeLeech();
         EnemyHellFire();
@@ -112,7 +112,7 @@ public class AIbehaviour : MonoBehaviour
 
     public void RandomCardPlayActivator()
     {
-        //StartCoroutine(RandomCardPlay());
+        StartCoroutine(RandomCardPlay());
         
     }
 

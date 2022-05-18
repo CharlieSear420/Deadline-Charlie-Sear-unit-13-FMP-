@@ -219,7 +219,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &25000711
 RectTransform:
   m_ObjectHideFlags: 0
@@ -489,7 +489,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &43707602
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1788,7 +1788,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 460, y: -167}
+  m_AnchoredPosition: {x: 460, y: -124}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &159212797
@@ -2523,7 +2523,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &218227137
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10621,7 +10621,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &960371716
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16667,7 +16667,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1583913855
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16686,7 +16686,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 458, y: -126}
+  m_AnchoredPosition: {x: 458, y: -167}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1583913856
@@ -17930,6 +17930,7 @@ MonoBehaviour:
   drawTimer: 5
   burnerCards: 25
   burnerTimer: 3
+  enemyBurnerTimer: 3
   playerTimer: 120
   enemyTimer: 120
   boardSpace: 5
@@ -17949,21 +17950,22 @@ MonoBehaviour:
   loopAmount: 0
   runLoop: 1
   tDivert: 0
-  angel: {fileID: 0}
-  defensiveMirror: {fileID: 0}
-  doubleEdgedSword: {fileID: 0}
-  frontlineDefense: {fileID: 0}
-  graveRobber: {fileID: 0}
-  hailMary: {fileID: 0}
-  hellFire: {fileID: 0}
-  hourHandLance: {fileID: 0}
-  lastLeg: {fileID: 0}
-  multiSecondJab: {fileID: 0}
-  timeLeech: {fileID: 0}
-  timerDiversion: {fileID: 0}
+  angel: 
+  defensiveMirror: 
+  doubleEdgedSword: 
+  frontlineDefense: 
+  graveRobber: 
+  hailMary: 
+  hellFire: 
+  hourHandLance: 
+  lastLeg: 
+  multiSecondJab: 
+  timeLeech: 
+  timerDiversion: 
   playerDeckSpawnLocation: {fileID: 1072231962}
   enemyDeckSpawnLocation: {fileID: 1551923297}
   i: 0
+  f: 0
 --- !u!1001 &1785013481
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18079,7 +18081,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -89, y: -167}
+  m_AnchoredPosition: {x: -89, y: -124}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1790693119
@@ -20523,7 +20525,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2064164778
 RectTransform:
   m_ObjectHideFlags: 0
@@ -20542,7 +20544,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -90, y: -125}
+  m_AnchoredPosition: {x: -90, y: -166}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2064164779
