@@ -111,7 +111,7 @@ public class AIbehaviour : MonoBehaviour
                 EnemyHellFireTimer();
             }
 
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(5);
         }
         
     }

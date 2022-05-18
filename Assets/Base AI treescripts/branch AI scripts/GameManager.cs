@@ -151,6 +151,13 @@ public class GameManager : MonoBehaviour
         
     }
 
+//-------------------------------<<<Timer display stuff>>>-------------------------------
+
+public void DisplayTime(float timeToDisplay)
+{
+
+}
+
 //-------------------------------<<<Base stuff>>>-------------------------------
 
     public void DrawCard()
@@ -223,7 +230,12 @@ public class GameManager : MonoBehaviour
 
     public void PlayerLeechTimer()
     {
-        pLeechCounter = 30f;
+        if (burnerCards >= 5)
+        {
+            pLeechCounter = 30f;
+            burnerCards -= 5;
+        }
+        
     }
     
     public void PlayerTimeLeech()
@@ -247,7 +259,12 @@ public class GameManager : MonoBehaviour
 
     public void PlayerHellFireTimer()
     {
-        pHellCounter = 10f;
+        if (burnerCards >= 10)
+        {
+            pHellCounter = 10f;
+            burnerCards -= 10;
+        }
+        
     }
 
     public void PlayerHellFire()
@@ -304,7 +321,12 @@ public class GameManager : MonoBehaviour
 
     public void TimerDiversionActivate()
     {
-        tDivert = true;
+        if (burnerCards >= 3)
+        {
+            tDivert = true;
+            burnerCards -= 3;
+        }
+        
     }
 
     public void FrontlineDefense()
@@ -319,16 +341,24 @@ public class GameManager : MonoBehaviour
 
     public void PlayerHourHandLance()
     {
-        enemyTimer -= 5f;
-        print ("Hour Hand Lance waas played");
+        if (burnerCards >= 3)
+        {
+            enemyTimer -= 5f;
+            burnerCards -= 3;
+        }
+        
+        //print ("Hour Hand Lance waas played");
     }
 
     public void DoubleEdgedSword()
     {
-        enemyTimer -= 7.5f;
-        //wait
+        if (burnerCards >= 3)
+        {
+            enemyTimer -= 7.5f;
+            playerTimer -= cardsInPlayersHand;
+            burnerCards -= 3;
+        }
         
-        playerTimer -= cardsInPlayersHand;
     }
 
     public IEnumerator MultiSecondJab()
@@ -348,7 +378,12 @@ public class GameManager : MonoBehaviour
 
     public void JabMulti()
     {
-        StartCoroutine(MultiSecondJab());
+        if (burnerCards >= 15)
+        {
+            StartCoroutine(MultiSecondJab());
+            burnerCards -= 15;
+        }
+        
     }
 
 //-------------------------------<<<More Deck stuff>>>-------------------------------
