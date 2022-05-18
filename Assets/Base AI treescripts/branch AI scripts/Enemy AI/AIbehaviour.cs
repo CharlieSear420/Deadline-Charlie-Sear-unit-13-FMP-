@@ -127,49 +127,49 @@ public class AIbehaviour : MonoBehaviour
 
     public void TimerDiversionActivate()
     {
-        tDivert = true;
+        etDivert = true;
     }
 
-    public void PlayerHourHandLance()
+    public void EnemyHourHandLance()
     {
-        enemyTimer -= 5f;
-        print ("Hour Hand Lance waas played");
+        GameObject.FindWithTag("Game Manager").GetComponent<GameManager>().playerTimer -= 5f;
+        print ("Enemy Hour Hand Lance waas played");
     }
 
-    public void DoubleEdgedSword()
+    public void EnemyDoubleEdgedSword()
     {
-        enemyTimer -= 7.5f;
+        GameObject.FindWithTag("Game Manager").GetComponent<GameManager>().playerTimer -= 7.5f;
         //wait
         
-        playerTimer -= cardsInPlayersHand;
+        GameObject.FindWithTag("Game Manager").GetComponent<GameManager>().enemyTimer -= GameObject.FindWithTag("Game Manager").GetComponent<GameManager>().cardsInPlayersHand;
     }
 
-    public IEnumerator MultiSecondJab()
+    public IEnumerator EnemyMultiSecondJab()
     {
-        while (runLoop)
+        while (eRunLoop)
         {
-            if (loopAmount == 10)
+            if (eloopAmount == 10)
             {
-                runLoop = false;
+                eRunLoop = false;
                 break;
             }
             else
             {
-                enemyTimer -= 1.5f;
+                GameObject.FindWithTag("Game Manager").GetComponent<GameManager>().enemyTimer -= 1.5f;
             }
 
-            loopAmount++;
+            eloopAmount++;
 
             yield return new WaitForSeconds(1);
         }
 
-        print ("Multisecond Jab was played");
+        print ("Enemy Multisecond Jab was played");
 
     }
 
-    public void JabMulti()
+    public void EnemyJabMulti()
     {
-        StartCoroutine(MultiSecondJab());
+        StartCoroutine(EnemyMultiSecondJab());
     }
 
     //-----------------------------decision making-----------------------------------
