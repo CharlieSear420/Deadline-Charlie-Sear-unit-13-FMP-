@@ -34,6 +34,7 @@ public class AIbehaviour : MonoBehaviour
     public float eHellCounter = 0f;
     //public float eJabCounter = 0f;
     public float etDiversion = 20f;
+    public float randomCardTimer = 2f;
 
     public float eloopAmount = 0f;
     
@@ -44,7 +45,7 @@ public class AIbehaviour : MonoBehaviour
 
     void Start()
     {
-        
+        StartCoroutine(RandomCardPlay());
     }
 
     
@@ -53,7 +54,7 @@ public class AIbehaviour : MonoBehaviour
         ThoughtProcess();
         CheckTimer();
         
-        StartCoroutine(RandomCardPlay());
+        
         
         EnemyTimeLeech();
         EnemyHellFire();
@@ -63,50 +64,55 @@ public class AIbehaviour : MonoBehaviour
     public IEnumerator RandomCardPlay()
     {
         
-        k = Random.Range(1, 10);
+        bool playCard=true;
 
-        if (k == 1)
+        while( playCard == true )
         {
-            EnemyLeechTimer();
-        }
-        if (k == 2)
-        {
-            EnemyHellFireTimer();
-        }
-        if (k == 3)
-        {
-            TimerDiversionActivate();
-        }
-        if (k == 4)
-        {
-            EnemyHourHandLance();
-        }
-        if (k == 5)
-        {
-            EnemyDoubleEdgedSword();
-        }
-        if (k == 6)
-        {
-            EnemyJabMulti();
-        }
-        if (k == 7)
-        {
-            EnemyDoubleEdgedSword();
-        }
-        if (k == 8)
-        {
-            EnemyJabMulti();
-        }
-        if (k == 9)
-        {
-            EnemyHourHandLance();
-        }
-        if (k == 10)
-        {
-            EnemyHellFireTimer();
-        }
+            k = Random.Range(1, 10);
 
-        yield return new WaitForSeconds(2);
+            if (k == 1)
+            {
+                EnemyLeechTimer();
+            }
+            if (k == 2)
+            {
+                EnemyHellFireTimer();
+            }
+            if (k == 3)
+            {
+                TimerDiversionActivate();
+            }
+            if (k == 4)
+            {
+                EnemyHourHandLance();
+            }
+            if (k == 5)
+            {
+                EnemyDoubleEdgedSword();
+            }
+            if (k == 6)
+            {
+                EnemyJabMulti();
+            }
+            if (k == 7)
+            {
+                EnemyDoubleEdgedSword();
+            }
+            if (k == 8)
+            {
+                EnemyJabMulti();
+            }
+            if (k == 9)
+            {
+                EnemyHourHandLance();
+            }
+            if (k == 10)
+            {
+                EnemyHellFireTimer();
+            }
+
+            yield return new WaitForSeconds(2);
+        }
         
     }
 
