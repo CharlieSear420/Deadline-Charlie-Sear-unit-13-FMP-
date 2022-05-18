@@ -321,10 +321,10 @@ public void DisplayTime(float timeToDisplay)
 
     public void TimerDiversionActivate()
     {
-        if (burnerCards >= 3)
+        if (burnerCards >= 5)
         {
             tDivert = true;
-            burnerCards -= 3;
+            burnerCards -= 5;
         }
         
     }
