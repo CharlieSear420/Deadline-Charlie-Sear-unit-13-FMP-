@@ -106,6 +106,8 @@ public class GameManager : MonoBehaviour
         playerHand = new List<string>();
         playerDeck = new List<string>();
 
+        GeneratePlayerDeck();
+
 
 
     }
@@ -118,6 +120,7 @@ public class GameManager : MonoBehaviour
         EnemyCountDown();
         BurnCount();
         DrawCard();
+        
         PlayerTimeLeech();
         PlayerHellFire();
         TimerDiversion();
@@ -152,6 +155,8 @@ public class GameManager : MonoBehaviour
 
     public void DrawCard()
     {
+        string str;
+
         if (drawTimer > 0)
         {
             drawTimer -= Time.deltaTime;
@@ -161,7 +166,7 @@ public class GameManager : MonoBehaviour
         {
             //draw card
             drawTimer = 5f;
-            string str = GetFirstPlayerCard();
+            str = GetFirstPlayerCard();
 
 
         }
@@ -328,22 +333,14 @@ public class GameManager : MonoBehaviour
 
     public IEnumerator MultiSecondJab()
     {
-        while (runLoop)
+        for( int i=0; i<10; i++ )
         {
-            if (loopAmount == 10)
-            {
-                runLoop = false;
-                break;
-            }
-            else
-            {
-                enemyTimer -= 1.5f;
-            }
-
-            loopAmount++;
-
+            enemyTimer -= 1.5f;
             yield return new WaitForSeconds(1);
+
         }
+
+
 
         print ("Multisecond Jab was played");
 
@@ -364,6 +361,10 @@ public class GameManager : MonoBehaviour
         {
             //newObject = Instantiate( angel, playerDeckSpawnLocation.position, Quaternion.identity );
             f = Random.Range(1, 12);
+
+            print("random=" + f);
+
+
             if (f == 1)
             {
                 newString = angel;
@@ -421,9 +422,13 @@ public class GameManager : MonoBehaviour
     // draw first card from deck 
     string GetFirstPlayerCard()
     {
+        
+
+
         string firstCard = playerDeck[0];
+
+        
         playerDeck.RemoveAt(0);
-        //pla`
         return firstCard;
     }
 

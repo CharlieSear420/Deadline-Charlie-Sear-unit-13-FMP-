@@ -37,6 +37,10 @@ public class AIbehaviour : MonoBehaviour
 
     public float eloopAmount = 0f;
     
+//---------------------------------------------------------------------------------------
+
+    public int k;
+    public int i;
 
     void Start()
     {
@@ -48,11 +52,68 @@ public class AIbehaviour : MonoBehaviour
     {
         ThoughtProcess();
         CheckTimer();
+        
+        RandomCardPlayActivator();
+        
+        EnemyTimeLeech();
+        EnemyHellFire();
+        EnemyTimerDiversion();
     }
 
-    public void RandomCardPlay()
+    public IEnumerator RandomCardPlay()
     {
+        
+        k = Random.Range(1, 10);
 
+        if (k == 1)
+        {
+            EnemyLeechTimer();
+        }
+        if (k == 2)
+        {
+            EnemyHellFireTimer();
+        }
+        if (k == 3)
+        {
+            TimerDiversionActivate();
+        }
+        if (k == 4)
+        {
+            EnemyHourHandLance();
+        }
+        if (k == 5)
+        {
+            EnemyDoubleEdgedSword();
+        }
+        if (k == 6)
+        {
+            EnemyJabMulti();
+        }
+        if (k == 7)
+        {
+            EnemyDoubleEdgedSword();
+        }
+        if (k == 8)
+        {
+            EnemyJabMulti();
+        }
+        if (k == 9)
+        {
+            EnemyHourHandLance();
+        }
+        if (k == 10)
+        {
+            EnemyHellFireTimer();
+        }
+
+        yield return new WaitForSeconds(2);
+        
+    }
+
+    public void RandomCardPlayActivator()
+    {
+        //StartCoroutine(RandomCardPlay());
+        
     }
 
     //-------------------------------<<<Card stuff>>>-------------------------------
@@ -79,8 +140,6 @@ public class AIbehaviour : MonoBehaviour
         
     }
 
-
-
     public void EnemyHellFireTimer()
     {
         eHellCounter = 10f;
@@ -99,8 +158,6 @@ public class AIbehaviour : MonoBehaviour
        //print ("Hell Fire was played");
 
     }
-
-   
 
     public void LastLeg()
     {
