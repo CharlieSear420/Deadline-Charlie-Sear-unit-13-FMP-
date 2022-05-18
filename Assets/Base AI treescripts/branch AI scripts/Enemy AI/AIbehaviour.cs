@@ -23,6 +23,9 @@ public class AIbehaviour : MonoBehaviour
     public bool checkDefensiveBool;
     public bool checkBoardSpaceBool;
 
+
+    
+
     void Start()
     {
         
@@ -32,6 +35,7 @@ public class AIbehaviour : MonoBehaviour
     void Update()
     {
         ThoughtProcess();
+        CheckTimer();
     }
 
     //-----------------------------decision making-----------------------------------
@@ -91,9 +95,13 @@ public class AIbehaviour : MonoBehaviour
 
     public void CheckTimer()
     {
-        //if (GameObject.FindWithTag("GameObject").GetComponent<Cards>().enemyTimer >= GameObject.FindWithTag("GameObject").GetComponent<Cards>().playerTimer)
+        if (GameObject.FindWithTag("Game Manager").GetComponent<GameManager>().enemyTimer >= GameObject.FindWithTag("Game Manager").GetComponent<GameManager>().playerTimer)
         {
-           // checkTimerBool = true;
+           checkTimerBool = true;
+        }
+        else
+        {
+            checkTimerBool = false;
         }
     }
     public void CheckOffensiveCard()
