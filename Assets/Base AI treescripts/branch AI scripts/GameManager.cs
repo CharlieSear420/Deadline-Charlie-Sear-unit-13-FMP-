@@ -232,7 +232,7 @@ public void DisplayTime(float timeToDisplay)
     {
         if (burnerCards >= 5)
         {
-            pLeechCounter = 30f;
+            pLeechCounter = 20f;
             burnerCards -= 5;
         }
         
