@@ -17,12 +17,19 @@ public class UICode : MonoBehaviour
     {
         
     }
+    
+    void Awake()
+    {
+        Time.timeScale = 1f;
+
+    }
 
 
     public void LoadScene(string SampleScene)
     {
-        Time.timeScale = 1f;
+        
         SceneManager.LoadScene(SampleScene);
+        Time.timeScale = 1f;
     }
 
     public void Quit()

@@ -97,7 +97,7 @@ public class GameManager : MonoBehaviour
         gm = this;
 
 
-
+        Time.timeScale = 1f;
         //pg.i= 100;
         //pg.Start();
 
