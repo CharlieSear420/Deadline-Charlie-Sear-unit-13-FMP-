@@ -19,13 +19,18 @@ public class GameManager : MonoBehaviour
     public float enemyTimer = 120f;
     public int boardSpace = 5;
   
-//-------------------------------<<<UI Text>>>-------------------------------
+//-------------------------------<<<UI Text Stuff>>>-------------------------------
 
     public Text playerTimeText;
     public Text enemyTimeText;
     public Text burnerCardsText;
     public Text deckSizeText;
     public Text divertTimeText;
+
+    public int pTime; 
+    public int eTime; 
+    public int bTime; 
+    public int dTime; 
 
 //-------------------------------<<<UI Game Objects>>>-------------------------------
 
@@ -129,22 +134,26 @@ public class GameManager : MonoBehaviour
 
         if( playerTimeText != null )
         {
-            playerTimeText.text = playerTimer.ToString();
+            pTime = (int) playerTimer;
+            playerTimeText.text = pTime.ToString();
         } 
 
         if( enemyTimeText != null )
         {
-            enemyTimeText.text = enemyTimer.ToString();
+            eTime = (int) enemyTimer;
+            enemyTimeText.text = eTime.ToString();
         }
         
         if ( burnerCardsText != null )
         {
-            burnerCardsText.text = burnerCards.ToString();
+            bTime = (int) burnerCards;
+            burnerCardsText.text = bTime.ToString();
         }
 
         if( divertTimeText != null )
         {
-            divertTimeText.text = tDiversion.ToString();
+            dTime = (int) tDiversion;
+            divertTimeText.text = dTime.ToString();
         } 
 
 
